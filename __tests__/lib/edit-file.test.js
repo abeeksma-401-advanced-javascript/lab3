@@ -1,5 +1,18 @@
 'use strict';
 
+
+const fs = require('fs');
+const editFile = require('../../edit-file'); 
+
+
+let fileToRead = `${__dirname}../../files/2.txt`;
+
+describe('edit-file', () => {
+  it('call callback with error for missing file', () => {
+    let result = editFile('nothere.txt', 'notathing.txt', (err, data));
+    expect(err).toBeDefined();
+  });
+});
 //CLASS EXAMPLE FOR HELPING THE BRAINS
 
 

@@ -4,12 +4,12 @@ const fs = require('fs');
 
 
 
-module.exports = function (fileToRead, fileToWrite, callback) {
+module.exports = function (fileToRead, fileToEdit, callback) {
   fs.readFile(fileToRead, (err, data) => {
     if(err){
       callback(err);
-    }
-    return callback(null, data);
+    } 
+    callback(null, data);
   });
 };
 

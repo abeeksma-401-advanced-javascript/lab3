@@ -5,14 +5,18 @@ const fs = require('fs');
 const editFile = require('../../edit-file'); 
 
 
-let fileToRead = `${__dirname}../../files/2.txt`;
+//let fileToRead = `${__dirname}../../files/2.txt`;
 
-describe('edit-file', () => {
-  it('call callback with error for missing file', () => {
-    let result = editFile('nothere.txt', 'notathing.txt', (err, data));
+describe('edit-file module', () => {
+  it('call callback with error for missing file', done => {
+    let result = editFile(fileToRead, fileToEdit, (err, data));
     expect(err).toBeDefined();
+    console.log(err);
+    done();
   });
 });
+
+
 //CLASS EXAMPLE FOR HELPING THE BRAINS
 
 
